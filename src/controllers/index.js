@@ -1,5 +1,5 @@
 const express = require('express');
-let users = require('../../config/users.json')
+let users = require('../../config/users.json');
 
 /* GET home page. */
 exports.index_get = (req, res) => {

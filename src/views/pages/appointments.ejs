@@ -4,7 +4,11 @@
     <body>
         <% include ../partials/nav %>
             <p>Appointment Page</p>
-
+            <form action="/schedule" method="post">
+                Book your appointment:
+                <input type="datetime-local" name="calendar">
+                <input type="submit">
+            </form>
             <% include ../partials/footer %>
                 <% include ../partials/scripts %>
     </body>
