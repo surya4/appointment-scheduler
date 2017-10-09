@@ -1,5 +1,5 @@
 {
-    "users": [{
+    "data": [{
             "name": "abcd",
             "password": "1234",
             "timezone": "Indian Standard Time (+5:30 GMT)"

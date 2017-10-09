@@ -2,7 +2,7 @@ const express = require('express');
 let users = require('../../config/users.json')
 
 /* GET home page. */
-exports.index_get = (req, res, next) => {
+exports.index_get = (req, res) => {
     try {
         res.render('pages/index', {
             title: 'Appointment Scheduler'
@@ -14,13 +14,26 @@ exports.index_get = (req, res, next) => {
 };
 
 exports.index_post = (req, res, next) => {
-    let name = req.body;
-
-    console.log(name);
+    let message,
+        loginAllow = false;
+    for (var i = 0; i < users.data.length; i++) {
+        if (users.data[i].name === req.body.Username &&
+            users.data[i].password === req.body.password) {
+            loginAllow = true;
+            break;
+        } else {
+            message = 'In correct Credentials';
+        }
+    }
     try {
-        res.render('pages/appointments');
+        if (loginAllow) {
+            res.render('pages/appointments');
+        } else {
+            res.send(message);
+        }
     } catch (e) {
         console.log("Error : " + e);
-        return next(e);
+        return next(e)
     }
+
 };
