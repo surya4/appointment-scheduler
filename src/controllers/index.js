@@ -27,7 +27,10 @@ exports.index_post = (req, res, next) => {
     }
     try {
         if (loginAllow) {
-            res.render('pages/appointments');
+            res.render('pages/appointments', {
+                data: users.data,
+                user: req.body.Username
+            });
         } else {
             res.send(message);
         }
