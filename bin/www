@@ -5,7 +5,7 @@
  */
 
 var http = require('http');
-var debug = require('debug')('mydropbox:server');
+var debug = require('debug')('appointment-scheduler:server');
 var app = require('../app');
 var config = require('../config/config.js');
 

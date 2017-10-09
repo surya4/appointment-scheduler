@@ -1,14 +1,8 @@
-## My DropBox
+## Appointment Scheduler
 
 ### Configuration
 - **Platform:** node
 - **Framework**: express
-- **Template Engine**: mustache
+- **Template Engine**: ejs
 - **CSS Framework**: bootstrap
 - **CSS Preprocessor**: css
-- **JavaScript Framework**: 
-- **Build Tool**: none
-- **Unit Testing**: mocha
-- **Database**: mongodb
-- **Authentication**: email,facebook,google,twitter,github
-- **Deployment**: aws
