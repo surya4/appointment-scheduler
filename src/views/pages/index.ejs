@@ -3,7 +3,32 @@
 
     <body>
         <% include ../partials/nav %>
-            
+            <!-- Login Form -->
+            <div class="container">
+                <div class="row">
+                    <form class="form-horizontal" action="/appointments" method="post">
+                        <div class="control-group">
+                            <label class="control-label" for="inputname">Username</label>
+                            <div class="controls">
+                                <input type="text" id="inputname" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inputPassword">Password</label>
+                            <div class="controls">
+                                <input type="password" id="inputPassword" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
             <% include ../partials/footer %>
                 <% include ../partials/scripts %>
     </body>
