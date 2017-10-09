@@ -15,10 +15,12 @@ exports.index_get = (req, res) => {
 
 exports.index_post = (req, res, next) => {
     let message,
+        pos,
         loginAllow = false;
     for (var i = 0; i < users.data.length; i++) {
         if (users.data[i].name === req.body.Username &&
             users.data[i].password === req.body.password) {
+            pos = i;
             loginAllow = true;
             break;
         } else {
@@ -29,7 +31,8 @@ exports.index_post = (req, res, next) => {
         if (loginAllow) {
             res.render('pages/appointments', {
                 data: users.data,
-                user: req.body.Username
+                user: users.data[i].name,
+                timezone: users.data[i].timezone
             });
         } else {
             res.send(message);

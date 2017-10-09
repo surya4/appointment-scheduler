@@ -1,1 +1,1 @@
-{ "data": [{ "name": "abcd", "password": "1234", "timezone": "Indian Standard Time (+5:30 GMT)", "schedules": [] }, { "name": "xyz", "password": "4321", "timezone": "Pacific Standard Time (-7 GMT)", "schedules": [] }] }
+{"data":[{"name":"abcd","password":"1234","timezone":"Indian Standard Time (+5:30 GMT)","schedules":[]},{"name":"xyz","password":"4321","timezone":"Pacific Standard Time (-7 GMT)","schedules":["2017-10-12","2017-10-19","2017-10-11"]}]}
