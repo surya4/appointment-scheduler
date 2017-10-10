@@ -10,6 +10,7 @@ let timezone_name,
 
 exports.appoint_get = (req, res, next) => {
     try {
+
         res.render('pages/appointments', {
             title: 'Appointment Scheduler',
 

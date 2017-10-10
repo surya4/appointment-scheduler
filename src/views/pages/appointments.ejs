@@ -3,19 +3,25 @@
 
     <body>
         <% include ../partials/nav %>
-            <p>Appointment Page</p>
-            <form action="/schedule" method="post">
-                Book your appointment:
-                <select name="scheduleto">
+            <div class="container">
+                <form action="/schedule" method="post">
+                    Book your appointment:
+                    <select name="scheduleto">
                     <% for (var i = 0; i < data.length; i++) { %>
                         <% if(data[i].name !== user) {%>
                             <option value='<%= data[i].name %>'><%= data[i].name %></option>
                 <% }} %>  
             </select>
-                <input type="datetime-local" name="calendar">
-                <input type="submit">
-            </form>
-
+                    <input type="datetime-local" name="calendar">
+                    <input type="submit">
+                </form>
+                <h3>My Appointments</h3>
+                <% for (var i = 0; i < data[pos].schedules.length; i++) { %>
+                    <p>
+                        <%= data[pos].schedules[i] %>
+                    </p>
+                    <% } %>
+            </div>
             <% include ../partials/footer %>
                 <% include ../partials/scripts %>
     </body>

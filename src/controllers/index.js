@@ -28,12 +28,13 @@ exports.index_post = (req, res, next) => {
                 message = 'In correct Credentials';
             }
         }
-        console.log(pos);
-        console.log(users.data[pos]);
+        // console.log(req.body.Username);
+        // console.log(users.data[pos]);
         if (loginAllow) {
             res.render('pages/appointments', {
                 data: users.data,
-                user: users.data[pos].name
+                user: users.data[pos].name,
+                pos: pos
             });
         } else {
             res.send(message);
