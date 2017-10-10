@@ -17,22 +17,23 @@ exports.index_post = (req, res, next) => {
     let message,
         pos,
         loginAllow = false;
-    for (var i = 0; i < users.data.length; i++) {
-        if (users.data[i].name === req.body.Username &&
-            users.data[i].password === req.body.password) {
-            pos = i;
-            loginAllow = true;
-            break;
-        } else {
-            message = 'In correct Credentials';
-        }
-    }
     try {
+        for (var i = 0; i < users.data.length; i++) {
+            if (users.data[i].name === req.body.Username &&
+                users.data[i].password === req.body.password) {
+                pos = i;
+                loginAllow = true;
+                break;
+            } else {
+                message = 'In correct Credentials';
+            }
+        }
+        console.log(pos);
+        console.log(users.data[pos]);
         if (loginAllow) {
             res.render('pages/appointments', {
                 data: users.data,
-                user: users.data[i].name,
-                timezone: users.data[i].timezone
+                user: users.data[pos].name
             });
         } else {
             res.send(message);

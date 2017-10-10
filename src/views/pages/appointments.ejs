@@ -10,14 +10,12 @@
                     <% for (var i = 0; i < data.length; i++) { %>
                         <% if(data[i].name !== user) {%>
                             <option value='<%= data[i].name %>'><%= data[i].name %></option>
-                     <% }} %>   
-                </select>
-                <input type="date" name="calendar">
-                <p>
-                    <%= timezone %>
-                </p>
+                <% }} %>  
+            </select>
+                <input type="datetime-local" name="calendar">
                 <input type="submit">
             </form>
+
             <% include ../partials/footer %>
                 <% include ../partials/scripts %>
     </body>
