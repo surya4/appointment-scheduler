@@ -4,22 +4,31 @@
     <body>
         <% include ../partials/nav %>
             <div class="container">
-                <form action="/schedule" method="post">
+                <form action="/" method="post">
                     Book your appointment:
-                    <select name="scheduleto">
-                    <% for (var i = 0; i < data.length; i++) { %>
-                        <% if(data[i].name !== user) {%>
-                            <option value='<%= data[i].name %>'><%= data[i].name %></option>
-                <% }} %>  
+                    <select name="schedulewith">
+                        <% for (var i = 0; i < users.length; i++) { %> 
+                        <option value="<%= users[i] %>"><%= users[i] %></option>
+                        <% } %>
+
             </select>
                     <input type="datetime-local" name="calendar">
+                    <input type="text" id="note" name="note" placeholder="ShortNote">
                     <input type="submit">
                 </form>
                 <h3>My Appointments</h3>
-                <% for (var i = 0; i < data[pos].schedules.length; i++) { %>
-                    <p>
-                        <%= data[pos].schedules[i] %>
-                    </p>
+                <% for (let i = 0; i < schedules.length; i++) { %>
+                    <span> <b> 
+                        <%= schedules[i].time %>
+                    </b>
+                       
+                    </span>
+
+                    <span>[<%= schedules[i].scheduled_with %>]</span>
+                    <span>
+                            <%= schedules[i].short_note %>
+                        </span>
+                    <br>
                     <% } %>
             </div>
             <% include ../partials/footer %>

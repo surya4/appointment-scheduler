@@ -1,0 +1,14 @@
+{
+    "user1": {
+        "password": "1234",
+        "timezone": "Pacific Standard Time (-7 GMT)"
+    },
+    "user2": {
+        "password": "4321",
+        "timezone": "Indian Standard Time (+5:30 GMT)"
+    },
+    "user3": {
+        "password": "0000",
+        "timezone": "Eastern Standard Time (-5:00 GMT)"
+    }
+}
