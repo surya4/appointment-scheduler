@@ -7,7 +7,8 @@ let times = require("../models/timezone.json");
 
 /* GET home page. */
 exports.index_get = (req, res) => {
-    if (req.session.is_logged_in) {
+    if (req.session != undefined && req.session.is_logged_in) {
+        console.log("calling params" + req.params);
         let user_data = get_user_data_file(req.session.user);
         console.log("user is already logged in");
         let user_list = getAllUsers(req.session.user);
@@ -23,6 +24,12 @@ exports.index_get = (req, res) => {
             message: "Enter valid username and password"
         });
     }
+};
+
+// logout from system
+exports.logout = (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
 };
 
 exports.index_post = (req, res) => {
